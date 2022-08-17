@@ -1,0 +1,468 @@
+@import "variables";
+@import "cuerpo_pagina";
+@import "encabezado";
+@import "principal";
+@import "pie_pagina";
+
+
+/* Reset de boxes de documento */
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+p{
+    padding: $padding-parrafos;
+    margin: $margin-parrafos;
+}
+h2{
+    padding: $padding-h2;
+    margin: $margin-h2;    
+}
+div{
+    padding: $padding-div;
+    margin: $marigin-div;    
+}
+$colores: (
+    color_fondo_fijo: aliceblue,
+    color_fondo_cambia: rgb(38, 163, 163),
+);
+@mixin dimension_texto ($alineacion,$ancho,$alto){
+    text-align: $alineacion;
+    width: $ancho;
+    height: $alto;
+}
+@mixin dimension_imagen ($ancho,$alto,$bordeado){
+    width: $ancho;
+    height: $alto;
+    border-radius: $bordeado;
+}
+
+/* Estilos para carrusel */
+.carrusel{
+    grid-area: carrusel;
+    position: top;
+}
+.carousel-inner{
+    margin: 0;
+    padding: 0;
+}
+.carousel-item{ 
+    img{
+    border-radius: 5px;
+    }
+}
+
+/* Estilos para el contenido del main de la pagina index */
+@for $i from 1 through 4{
+
+    .bloque_main_#{$i}{
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background-color: map-get($colores,color_fondo_fijo);
+        border-radius: 5px;
+    
+        p{
+            @include dimension_texto(left,100%,50%)
+        }
+        img{
+            @include dimension_imagen(100%,330px,5px)
+        }
+
+    }
+}
+@for $i from 1 through 4{
+    .bloque_main_#{$i}:hover{
+        background-color: map-get($colores,color_fondo_cambia);
+    }
+}
+
+
+
+/* Estilos correspondientes al contenido de la pagina contactos */
+.sec_1_contactanos{
+    text-align: center;
+    background-color: map-get($colores,color_fondo_fijo);
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    div:hover{
+        background-color: map-get($colores,color_fondo_cambia);
+    }
+}
+.sec_2_contactanos{
+    display: flex;
+    justify-content: center;
+    div:hover{
+        background-color: map-get($colores,color_fondo_cambia);
+    }
+}
+.texto_formulario{
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+}
+.formulario{
+    background-color: map-get($colores,color_fondo_fijo);
+    border-radius: 10px;
+    width: 400px;
+    form{
+        display: grid;
+        grid-template-areas:
+        "nombre apellido"
+        "correo correo"
+        "empresa telefono"
+        "paises paises"
+        "texto texto"
+        "botones botones"
+        ; 
+    }
+}
+.form_nombre{
+    grid-area: nombre;
+    input{
+        width: 100%; 
+    }
+}
+.form_apellido{
+    grid-area: apellido;
+    input{
+        width: 100%;
+    }
+}
+.form_correo{
+    grid-area: correo;
+    text-align: center;
+    input{
+        width: 100%;
+    }
+}
+.form_empresa{
+    grid-area: empresa;
+    input{
+        width: 100%;
+    }
+}
+.form_telefono{
+    grid-area: telefono;
+    input{
+        width: 100%;
+    }
+}
+.form_paises{
+    grid-area: paises;
+    text-align: center;
+    select{
+        width: 100%;
+    }
+}
+textarea{
+    resize: none;
+}
+.form_texto{
+    grid-area: texto;
+    text-align: center;
+    textarea{
+        width: 100%;
+    }
+}
+.form_botones{
+    grid-area: botones;
+    text-align: center;
+    .boton_enviar{
+        margin: 1px;
+        padding: 5px;
+        border: 2px solid rgb(34, 36, 37);
+        border-radius: 5px;
+        background-color: rgb(111, 219, 111)
+    }
+    .boton_reset{
+        @extend .boton_enviar;
+        background-color: rgba(224, 88, 88, 0.541);
+    }
+}
+.boton_enviar:hover{
+    border: 3px solid;
+}
+.boton_reset:hover{
+    border: 3px solid;
+}
+.mapa_ubicacion{
+    background-color: map-get($colores,color_fondo_fijo);
+    border-radius: 10px;
+    p{
+        font-size: large;
+        font-weight: bold;  
+    }
+    iframe{
+        width: 400px;
+    }
+}
+
+/* Estilos correspondientes al contenido de la pagina empresa */
+.sec_1_empresa{
+    display: flex;
+    text-align: center;
+}
+.vv{
+    background-color:map-get($colores,color_fondo_fijo);
+    border-radius: 5px;
+}
+.mision_vision{
+    font-weight: bold;
+    font-size: larger;
+}
+.vv:hover{
+    background-color: map-get($colores,color_fondo_cambia);
+}
+
+
+/* Estilos correspondientes al contenido de la pagina servicios */
+.tarjeta_servicios{
+    background-color: map-get($colores,color_fondo_fijo);
+    border-radius: 5px;
+    height: 100%;
+}
+.card img{
+    width: 100%;
+    height: 350px;
+}
+.sec_1_servicios div h2{
+    font-size: small;
+}
+.tarjeta_servicios:hover{
+    background-color: map-get($colores,color_fondo_cambia);  
+}
+
+
+/* Estilos correspondientes al contenido de la pagina capacitacion */
+.tarjeta_capacitacion{
+    height: 100%;
+}
+.tarjeta_capacitacion:hover{
+    background-color: map-get($colores,color_fondo_cambia);  
+}
+
+
+/* Medias querys */
+
+@media screen and (max-width: 768px) {
+    .encabezado{
+        position:static;
+    }
+    .logo_empresa{
+        height: 80px;
+        width: 80px;
+    }
+    .titulo{
+        margin-left: 15%;
+    }
+    .sec_2_contactanos{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .bloque_main_1{
+        grid-template-columns: 1fr;
+        text-align: center;
+        div{
+            p{
+                text-align: center;
+                width: auto;
+            }
+        }
+    }
+    .bloque_main_2{
+        grid-template-columns: 1fr;
+        text-align: center;
+        div{
+            p{
+                text-align: center;
+                width: auto;
+            }
+        }
+    }
+    .bloque_main_3{
+        grid-template-columns: 1fr;
+        text-align: center;
+        div{
+            p{
+                text-align: center;
+                width: auto;
+            }
+        }
+    }
+    .bloque_main_4{
+        grid-template-columns: 1fr;
+        text-align: center;
+        div{
+            p{
+                text-align: center;
+                width: auto;
+            }
+        }
+    }
+    .sec_pie_de_pagina{
+        display: grid;
+        grid-template-columns: 1fr;
+        text-align: center;
+        div{
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .cuerpo_pagina{
+        display: grid;
+        grid-template-areas: 
+        "encabezado encabezado encabezado"
+        "carrusel carrusel carrusel"
+        "principal principal principal"
+        "pie_de_pagina pie_de_pagina pie_de_pagina"
+        ;
+    }
+    .principal{
+        text-align: center;
+    }
+    .logo_empresa{
+        width: 60px;
+        height: 60px;
+    }
+    .titulo{
+        margin-left: 25%;
+    }
+    .encabezado{
+        width: 410px;
+        nav{
+            text-align: center; 
+        }
+        div{
+            p{
+                font-size: small; 
+            }
+        }
+    }
+    .card-title{
+        font-size: smaller;
+    }
+    .card-text{
+        font-size: smaller;
+    }
+    .sec_1_empresa{
+        flex-wrap: wrap;
+        text-align: center;
+    }
+    .capacitacion_bloque1{
+        grid-template-columns: 1fr;
+    }
+    .capacitacion_bloque2{
+        grid-template-columns: 1fr;
+    }
+    .sec_pie_de_pagina{
+        display: grid;
+        grid-template-columns: 1fr;
+        text-align: center;
+        div{
+            width: 100%;
+        }
+    }
+}
+@media screen and (max-width: 378px) {
+    .cuerpo_pagina{
+        display: grid;
+        grid-template-areas: 
+        "encabezado encabezado"
+        "carrusel carrusel"
+        "principal principal"
+        "pie_de_pagina pie_de_pagina"
+        ;
+    }
+    .encabezado{
+        width: 360px;
+    }
+    .barra_lateral{
+        width: 360px;
+    }
+    .principal{
+        width: 360px;
+    }
+    .encabezado nav a{
+        font-size: small;
+    }
+    .logo_empresa{
+        width: 50px;
+        height: 50px;
+    }
+    .mapa_ubicacion iframe{
+        height: 360px;
+        width: 320px;
+    }
+}
+    @media screen and (max-width: 320px) {
+        .cuerpo_pagina{
+            display: grid;
+            grid-template-areas: 
+            "encabezado"
+            "carrusel"
+            "principal"
+            "pie_de_pagina"
+            ;
+            width: 315px;
+        }
+        .encabezado{
+            width: 310px;
+        }
+        .barra_lateral{
+            width: 310px;
+        }
+        .pie_de_pagina{
+            width: 310px;
+        }
+        .principal{
+            display: inline-block;
+            width: 315px;
+        }
+        .bloque_main_1{
+            width: 310px;
+        }
+        .bloque_main_2{
+            width: 310px;
+        }
+        .bloque_main_3{
+            width: 310px;
+        }
+        .bloque_main_4{
+            width: 310px;
+        }
+        .sec_1_servicios{
+            display: grid;
+            grid-template-columns: 1fr;
+            text-align: center;
+            width: 318px;
+        }
+        .sec_1_empresa{
+            width: 310px;
+        }
+        .sec_1_contactanos{
+            width: 310px;
+        }
+        .sec_2_contactanos{
+            width: 310px;
+        }
+        .mapa_ubicacion{
+            width: 310px;
+        }
+        .mapa_ubicacion iframe{
+            width: 280px;
+        }
+        .capacitacion_bloque1{
+            width: 310px;
+        }
+        .capacitacion_bloque2{
+            width: 310px;
+        }
+}

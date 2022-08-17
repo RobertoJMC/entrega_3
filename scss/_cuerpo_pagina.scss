@@ -1,0 +1,11 @@
+/* Estilos para la grilla general de la pagina */
+.cuerpo_pagina{
+    background-color: #b2ebf2;
+    display: grid;
+    grid-template-areas: 
+    "encabezado encabezado encabezado"
+    "carrusel carrusel carrusel"
+    "principal principal principal"
+    "pie_de_pagina pie_de_pagina pie_de_pagina"
+    ;
+}

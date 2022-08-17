@@ -1,0 +1,40 @@
+/* Estilos para todos los pie de pagina */
+.pie_de_pagina{
+    background-color: #02a2b8;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    grid-area: pie_de_pagina;
+    padding: 5px;
+    margin: 5px;
+
+}
+.sec_pie_de_pagina{
+    display: flex;
+    justify-content: space-between;
+
+    div{
+        width: 30%;
+    }
+}
+.lista_footer li{
+    display: inline;
+    margin-right: 10px;
+    text-decoration-line: none;
+
+    a{
+        text-decoration-line: none;
+
+        img:hover{
+            width: 42px;
+            height: 42px
+        }
+    }
+}
+.enlaces_footer{
+    ul{
+        list-style-type: none;
+        padding: 5px;
+        margin: 5px;
+    }
+}

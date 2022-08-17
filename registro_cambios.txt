@@ -1,0 +1,43 @@
+- compiler.scss
+    - Se agrego bucle for para crear clases de los contenidos para la pagina index.html
+    - Se agrego bucle for para crear clases con transicion para la pagina index.html
+    - Se creo mapa para manejar los colores de fondo fijo y los variables con el efecto
+    - Se creo mixin para tamaños de parrafo e imagenes de la pagina index.html
+    - Se agrego @extend para los botones enviar y reset de la pagina contactanos.html
+
+- index.html
+    - Se agregaron las siguientes keywords: automatizacion, electricidad, electronica, ingenieria, redes industriales,
+    industria 4.0, capacitacion indutrial, servicios de ingenieria.
+    - Se agrego la siguiente descripcion: Somos una empresa que ofrece servicios de ingenieria especializada en la electricidad
+    y electronica industrial para desarrollar soluciones vanguardistas a nuestros clientes.
+    - Se modifico el titulo de pagina a: Electrosystem Services || EAS.com
+
+- empresa.html
+    - Se agregaron las siguientes keywords: automatizacion, electricidad, electronica, ingenieria, redes industriales,
+    industria 4.0, capacitacion indutrial, servicios de ingenieria, mision, vision.
+    - Se agrego la siguiente descripcion: Somos una empresa que ofrece servicios de ingenieria especializada en la electricidad
+    y electronica, conocenos y se parte de nuestra organizacion.
+    - Se modifico el titulo de pagina a: Nuestra Empresa || EAS.com
+
+- servicios.html
+    - Se agregaron las siguientes keywords: automatizacion, electricidad, electronica, ingenieria, redes industriales,
+    industria 4.0.
+    - Se agrego la siguiente descripcion: Conoce en detalle todos los servicios que ofrecemos para satisfacer tus
+    necesidades empresariales.
+    - Se modifico el titulo de pagina a: Nuestros Servicios || EAS.com
+
+- contactanos.html
+    - Se agregaron las siguientes keywords: automatizacion, electricidad, electronica, ingenieria, redes industriales,
+    industria 4.0, capacitacion indutrial, servicios de ingenieria.
+    - Se agrego la siguiente descripcion: Si estas interesado en nuestros servicios, contactanos para mayor informacion.
+    - Se modifico el titulo de pagina a: Contacta con nosotros || EAS.com
+
+-capacitacion.html
+    - Se agregaron las siguientes keywords: automatizacion, electricidad, electronica, redes industriales,
+    industria 4.0, capacitacion indutrial.
+    - Se agrego la siguiente descripcion: Desarrollate como un personal tecnico calificado para desempeñarte en cualquier
+    industria.
+    - Se modifico el titulo de pagina a: Capacitaciones || EAS.com
+
+- Se crea pagina personal.html
+- Se agregan enlaces en pie de pagina
